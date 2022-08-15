@@ -3,6 +3,8 @@ ul {
     display: inline-block;
     border: 1px solid #ccc;
     border-right: 0;
+    padding-inline-start: 0px;
+    list-style: none;
 }
 
 ul li {

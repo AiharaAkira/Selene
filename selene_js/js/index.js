@@ -82,14 +82,21 @@ function displayData(currentPage, dataPerPage) {
       i < (currentPage - 1) * dataPerPage + dataPerPage;
       i++
     ) {
+      
       chartHtml +=
-        "<tr><td>" +
-        source[i].d1 +
+        "<tr><td id ='name"+ i +"'>"+
+        source[i].name +
         "</td><td>" +
-        source[i].d2 +
-        "</td><td>" +
-        source[i].d3 +
+        source[i].access +
+        "</td><td id ='logo" +i+"'>"+
+        "<img src='"+source[i].logo_image +"'>"+
         "</td></tr>";
+
+        $("#name"+i).click(function(){
+
+          console.log('성공');
+
+        });
     } //dataList는 임의의 데이터임.. 각 소스에 맞게 변수를 넣어주면 됨...
     $("#dataTableBody").html(chartHtml);
   }
@@ -142,54 +149,10 @@ $(function () {
             paging(totalData, dataPerPage, pageCount, 1);
 
           
-            $("#src_wrap").empty();
+          
             
             
-            $.each(source, function (i, shops) {
-
-               
-
-                $("#src_wrap").append("<div  id='img" + i + "'><img src=" + shops.logo_image + "></div>");
-
-                $("#src_wrap").append("<span  id='name" + i + "'></span>");
-                $('#name' + i).text(shops.name);
-
-                $("#src_wrap").append("<span  id='access" + i + "'></span>");
-                $('#access' + i).text(shops.access);
-
-
-
-
-
-
-
-                $('#img'+i).click(function(){
-                    $("#src_wrap").append("<div  id='img'><img src=" + shops.logo_image + "></div>");
-
-                    $("#src_wrap").append("<span  id='name'></span>");
-                    $('#name').text(shops.name);
-    
-                    $("#src_wrap").append("<span  id='access'></span>");
-                    $('#access').text(shops.access);
-                });
-
-
-
-
-
-                $('#name'+i).click(function(){
-                    $("#src_wrap").append("<div  id='img'><img src=" + shops.logo_image + "></div>");
-
-                    $("#src_wrap").append("<span  id='name'></span>");
-                    $('#name').text(shops.name);
-    
-                    $("#src_wrap").append("<span  id='access'></span>");
-                    $('#access').text(shops.access);
-                });
-
-                console.log(shops.name);
-                console.log(shops.address);
-            });
+            
 
             console.log(source);
 
@@ -201,6 +164,37 @@ $(function () {
 
     });
 
+  $("#dataTableBody").click(function(){
+
+    $.each(source, function(i, shop){
+
+      $("#name"+i).click(function(){
+        $("#dataTableBody_deatil").empty();
+        $("#dataTableBody_deatil").append("<tr><td id='name_det" + i + "'></td></tr>");
+        $('#name_det' + i).text(shop.name);
+        $("#dataTableBody_deatil").append("<tr><td id='address_det" + i + "'></td></tr>");
+        $('#address_det' + i).text(shop.address);
+        $("#dataTableBody_deatil").append("<tr><td id='img_det" + i + "'></td></tr>");
+        $('#img_det' + i).append("<img src='"+shop.photo.pc.m+"'>");
+        $("#dataTableBody_deatil").append("<tr><td id='open_det" + i + "'></td></tr>");
+        $('#open_det' + i).text(shop.open);
+      });
+
+      $("#logo"+i).click(function(){
+        $("#dataTableBody_deatil").empty();
+        $("#dataTableBody_deatil").append("<tr><td id='name_det" + i + "'></td></tr>");
+        $('#name_det' + i).text(shop.name);
+        $("#dataTableBody_deatil").append("<tr><td id='address_det" + i + "'></td></tr>");
+        $('#address_det' + i).text(shop.address);
+        $("#dataTableBody_deatil").append("<tr><td id='img_det" + i + "'></td></tr>");
+        $('#img_det' + i).append("<img src='"+shop.photo.pc.m+"'>");
+        $("#dataTableBody_deatil").append("<tr><td id='open_det" + i + "'></td></tr>");
+        $('#open_det' + i).text(shop.open);
+      });
+      
+
+    });
+  });
 
 
 

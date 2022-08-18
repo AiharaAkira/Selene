@@ -34,6 +34,7 @@ text-align: center;
 
 #first_wrap{
 
+
     background: linear-gradient(
         rgba(0, 0, 0, 0.3),
         rgba(0, 0, 0, 0.3)
@@ -42,8 +43,6 @@ text-align: center;
     background-size: cover;
 
     height: 100%;
-    
-   
     
  
 }
@@ -58,7 +57,7 @@ text-align: center;
     padding-top: 5%;
     text-align : left;
     margin-bottom: 5%;
-   
+
     
 }
 
@@ -69,10 +68,17 @@ text-align: center;
     height: 70%;
 }
 
+.open_det{
+  width: 50%;
+  float: left;
+}
+
 #dataTableBody{
-    border-collapse: collapse;
+    width: 100%;
+    display: inline-block;
+    height: auto;
     margin: 0 auto;
-    height: max-content;
+    
 }
 
 #dataTableBody_deatil{
@@ -83,7 +89,7 @@ text-align: center;
 .tbl_access{
    
     width: 400px;
-    height: 100px;
+    height: 150px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -114,12 +120,12 @@ text-align: center;
 .data_tbl{
   float: left;
   width: 20%;
- 
+ height: 400px;
   
 }
 
 .data_tbl div{
-  height: 33%;
+  height: max-content;
 }
 
 
@@ -195,7 +201,7 @@ a.button {
 
   .logo img{
     width: 60%;
-    height: 50%;
+    height: 100%;
     
     
   }
@@ -227,6 +233,7 @@ a.button {
 
 
   .detail_td_name{
+   
     font-size: 20px;
     font-weight: bold;
     color: black;
@@ -234,7 +241,7 @@ a.button {
   }
 
   #name_det{
-    padding-top: 25%;
+    padding-top: 13%;
     text-align: left;
 
   }

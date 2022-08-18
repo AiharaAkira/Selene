@@ -160,8 +160,8 @@ $(function () {
 
 
 
-
-
+    //	위도: 34.6936, 경도: 135.502
+    //lat=34.67&lng=135.52
     $.ajax({
       url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=ed29f000ddf09f94&lat=34.67&lng=135.52&range=5&order=4&format=jsonp&callback=callback',
       type: 'GET',
@@ -197,11 +197,11 @@ $(function () {
 
   });
 
-  $("#dataTableBody").on('click',function () {
+  $("#dataTableBody").unbind('click').on('click',function () {
 
     $.each(source, function (i, shop) {
 
-      $("#name" + i).click(function () {
+      $("#name" + i).unbind('click').on('click',function () {
 
         $("#dataTableBody_deatil").empty();
         $("#dataTableBody_deatil").append("<div class='detail_tbl detail_td'><div id='img_det" + i + "'></div></div>");
@@ -225,19 +225,25 @@ $(function () {
 
         const uluru = { lat: shop.lat, lng: shop.lng };
 
-
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: uluru,
-          zoom: 16,
-        });
-
-        const marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-        });
+        function initMap(){
 
 
-        window.initMap = initMap;
+          map = new google.maps.Map(document.getElementById("map"), {
+            center: uluru,
+            zoom: 16,
+          });
+  
+          const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+          });
+
+        }
+
+        
+
+
+        window.initMap = initMap();
 
 
 
@@ -260,10 +266,17 @@ $(function () {
 
         const uluru = { lat: shop.lat, lng: shop.lng };
 
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: uluru,
-          zoom: 16,
-        });
+        function initMap(){
+
+
+          map = new google.maps.Map(document.getElementById("map"), {
+            center: uluru,
+            zoom: 16,
+          });
+
+        }
+
+      
 
 
         const marker = new google.maps.Marker({
@@ -271,7 +284,7 @@ $(function () {
           map: map,
         });
 
-        window.initMap = initMap;
+        window.initMap = initMap();
 
       });
 

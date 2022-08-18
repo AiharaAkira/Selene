@@ -2,43 +2,117 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/paging.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/index.js"></script>
-    <script src="../js/delete.js"></script>
-    <script src="../js/detail.js"></script>
-    <script src="../js/paging.js"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/paging.css">
+  <link rel="stylesheet" href="../css/map.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/title.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  
+
+
+  
+  
+  <script src="../js/index.js"></script>
+  <script src="../js/delete.js"></script>
+  <script src="../js/scroll.js"></script>
+
+
+
+
+
+
+
 </head>
 
 <body>
+  
+  <div id="first_wrap">
+    
+    <div id="menu_bar_wrap">
 
-    <select id="dataPerPage">
-        <option value="2">2개씩보기</option>
-        <option value="4">4개씩보기</option>
-        <option value="6">6개씩보기</option>
-    </select>
+      <ul id="menu_bar">
+        <li id="menu_bar_selector1" class="menu_bar_selector">●</li>
+        <li id="menu_bar_selector2" class="menu_bar_selector">●</li>
+        <li id="menu_bar_selector3" class="menu_bar_selector">●</li>
+        <li id="menu_bar_selector4" class="menu_bar_selector">●</li>
+      </ul>
+      
+    </div>
+    
+    <div id="title_wrap">
+      <svg viewBox="0 0 400 150">
+        <symbol id="s-text">
 
-    <div id='btn_wrap'>
-        <div>
+          <text text-anchor="middle" x="50%" y="68%" class="text--line2">
+            Selene
+          </text>
 
-            <button id="btn_search">search</button>
-            <button id="btn_remove">remove</button>
+        </symbol>
 
-        </div>
+        <g class="g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+
+
+      </svg>
     </div>
 
-    <table id="dataTableBody"></table>
-   
+
+    <div id="select_wrap">
+
+      <select id="dataPerPage">
+        <option value="5">5개씩보기</option>
+        <option value="10">10개씩보기</option>
+        <option value="15">15개씩보기</option>
+      </select>
+
+
+
+      <a id="btn_search" onclick="fnMove('#tbl_wrap')" title="Button border blue/green"
+        class="button btnBorder btnBlueGreen">Search</a>
+      <a id="btn_remove" onclick="fnMove('#tbl_wrap')" title="Button border blue/green2"
+        class="button btnBorder btnGreen">Remove</a>
+
+
+    </div>
+
+  </div>
+
+  <div id="tbl_wrap">
+
+    <div id="dataTableBody"></div>
+
+  </div>
+
+  <div id="pagingul_wrap">
     <ul id="pagingul"></ul>
+  </div>
 
-    <table id="dataTableBody_deatil"></table>
 
 
-    
+  <div id="detail_wrap">
+    <div id="dataTableBody_deatil"></div>
+  </div>
+
+  <div id="map"></div>
+
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOeBTvErG-p2BCxODlAgX9psDs1_s7ug0&callback=initMap&v=weekly"
+    defer></script>
+
+  
+ 
+
 
 </body>
 

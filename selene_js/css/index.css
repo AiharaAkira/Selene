@@ -1,0 +1,296 @@
+body{
+  
+    
+    background-color: rgb(204, 210, 210);
+
+
+}
+
+#menu_bar_wrap{
+
+padding-left: 42%;
+width: 100%;
+
+text-align: center;
+}
+
+#menu_bar{
+  position: fixed;
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+  
+}
+
+#menu_bar li{
+  color: darkgray;
+  margin-right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  float: left;
+}
+
+
+
+#first_wrap{
+
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),url("https://free4kwallpapers.com/uploads/originals/2019/03/19/let-us-have-sushi-as--instead-wallpaper.jpg");
+      
+    background-size: cover;
+
+    height: 100%;
+    
+   
+    
+ 
+}
+
+
+
+
+
+
+#tbl_wrap{
+
+    padding-top: 5%;
+    text-align : left;
+    margin-bottom: 5%;
+   
+    
+}
+
+#detail_wrap{
+    margin-top: 7%;
+    text-align : center;
+    margin-bottom: 10%;
+    height: 70%;
+}
+
+#dataTableBody{
+    border-collapse: collapse;
+    margin: 0 auto;
+    height: max-content;
+}
+
+#dataTableBody_deatil{
+    margin: 0 auto;
+    height: 100%;
+}
+
+.tbl_access{
+   
+    width: 400px;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#select_wrap{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+#dataPerPage{
+    color: aliceblue;
+    font-weight: bold;
+    width: 48%;
+    height: 50px;
+    text-align: center;
+    background-color:transparent;
+    border-color: darkgray;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#dataPerPage option{
+    color: black;
+   
+}
+
+.data_tbl{
+  float: left;
+  width: 20%;
+ 
+  
+}
+
+.data_tbl div{
+  height: 33%;
+}
+
+
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #00AE68;
+}
+
+
+
+
+
+
+a.button {
+  display: inline-block;
+  
+  width: 120px;
+  padding: 0;
+  margin-left: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+
+}
+
+.btnBlueGreen {
+  background: #00AE68;
+}
+
+.btnBlueGreen.btnBorder {
+  box-shadow: 0px 0px 0px 0px #21825B;
+}
+
+.btnBlueGreen.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #21825B;
+}
+
+.btnGreen {
+  background: #00AE68;
+}
+
+.btnGreen.btnBorder {
+  box-shadow: 0px 0px 0px 0px #21825B;
+}
+
+.btnGreen.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #21825B;
+}
+
+
+  #dataTableBody tr td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #dataTableBody tr td img{
+    width: 30%;
+    height: 300px;
+    text-align: center;
+    
+  }
+
+  .logo{
+    
+    text-align: center;
+   
+  }
+
+  .logo img{
+    width: 60%;
+    height: 50%;
+    
+    
+  }
+ 
+  .tbl_access{
+    
+    text-align: auto;
+    margin: 0 auto;
+    color: grey;
+    width: 60%;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  
+  .tbl_name{
+    
+    text-align: auto;
+    margin: 0 auto;
+    
+    width: 60%;
+    height: 70px;
+    
+    font-weight: bold;
+
+    
+    
+  }
+
+
+  .detail_td_name{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    
+  }
+
+  #name_det{
+    padding-top: 25%;
+    text-align: left;
+
+  }
+
+
+  .img_det {
+    width: 50%;
+   
+  }
+
+  
+
+  #dataTableBody div div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #dataTableBody_deatil div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  .detail_tbl{
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+
+  .detail_td{
+    color: gray;
+    text-align: left;
+
+  }
+
+  #detail_back img{
+
+    
+    width: 5%;
+    margin-right: 5%;
+    color: #00AE68;
+    text-align: center;
+  }
+
+  .detail_tbl div {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .detail_tbl div img{
+    width: 70%;
+    height: 70%;
+  }
+
+ 
+  
+
+ 
+

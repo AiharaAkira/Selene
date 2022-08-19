@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="../css/menu.css">
   <link rel="stylesheet" href="../css/paging.css">
   <link rel="stylesheet" href="../css/map.css">
   <link rel="stylesheet" href="../css/index.css">
@@ -19,6 +20,7 @@
   
   
 
+  <script src="../js/menu.js"></script>
   <script src="../js/delete.js"></script>
   <script src="../js/scroll.js"></script>
 
@@ -33,17 +35,27 @@
 <body>
   
   <div id="first_wrap">
-    
-    <div id="menu_bar_wrap">
 
-      <ul id="menu_bar">
-        <li id="menu_bar_selector1" class="menu_bar_selector">●</li>
-        <li id="menu_bar_selector2" class="menu_bar_selector">●</li>
-        <li id="menu_bar_selector3" class="menu_bar_selector">●</li>
-        <li id="menu_bar_selector4" class="menu_bar_selector">●</li>
-      </ul>
+    <div id="header">
+      <div id="mask"></div>
       
+      <button type="button" class="btn_menu_open"></button>
+      <div class="slide_menu">
+        <div class="menu_close"><button type="button" class="btn_menu_close"><img src="https://cdn-icons-png.flaticon.com/512/70/70091.png"></button></div>
+        <ul id="menu_bar">
+         
+          <li id="menu_bar_selector1" class="menu_bar_selector">Main</li>
+          <li id="menu_bar_selector2" class="menu_bar_selector">dataPage</li>
+          <li id="menu_bar_selector3" class="menu_bar_selector">detail</li>
+          <li id="menu_bar_selector4" class="menu_bar_selector">Map</li>
+        
+        </ul>
+      </div>
     </div>
+  
+  
+    
+   
     
     <div id="title_wrap">
       <svg viewBox="0 0 400 150">
@@ -76,13 +88,10 @@
         <option value="15">15개씩보기</option>
       </select>
 
-
-
       <a id="btn_search" onclick="fnMove('#tbl_wrap')" title="Button border blue/green"
         class="button btnBorder btnBlueGreen">Search</a>
       <a id="btn_remove" onclick="fnMove('#tbl_wrap')" title="Button border blue/green2"
         class="button btnBorder btnGreen">Remove</a>
-
 
     </div>
 
@@ -102,10 +111,14 @@
 
 
   <div id="detail_wrap">
+    <div class="selene_guide">please_click_logo</div>
     <div id="dataTableBody_deatil"></div>
   </div>
 
-  <div id="map"></div>
+  <div id="map">
+    <div class="selene_guide">please_click_logo</div>
+
+  </div>
 
   <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOeBTvErG-p2BCxODlAgX9psDs1_s7ug0&v=weekly"

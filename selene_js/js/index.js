@@ -156,6 +156,48 @@ $(function () {
   dataPerPage = $("#dataPerPage").val();
 
 
+  $('#menu_bar_selector2').click(function () {
+
+
+
+    //	위도: 34.6936, 경도: 135.502
+    //lat=34.67&lng=135.52
+    $.ajax({
+      url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=ed29f000ddf09f94&lat=34.67&lng=135.52&range=5&order=4&format=jsonp&callback=callback',
+      type: 'GET',
+      dataType: 'jsonp',
+      jsonpCallback: 'callback'
+    }).done(function (data) {
+
+      source = data.results.shop;
+
+      //----paging---------------
+      totalData = source.length;
+      console.log(totalData);
+
+      //글 목록 표시 호출 (테이블 생성)
+      displayData(1, dataPerPage);
+
+      //페이징 표시 호출
+      paging(totalData, dataPerPage, pageCount, 1);
+
+
+
+
+
+
+
+      console.log(source);
+
+
+
+    }).fail(function (data) {
+      console.log("error");
+    });
+
+  });
+
+
   $('#btn_search').click(function () {
 
 
@@ -197,11 +239,21 @@ $(function () {
 
   });
 
-  $("#dataTableBody").unbind('click').on('click',function () {
+
+
+  $("").click(function(){
+    
+  });
+    
+
+
+
+
+  $("#dataTableBody").on('mouseover',function () {
 
     $.each(source, function (i, shop) {
 
-      $("#name" + i).unbind('click').on('click',function () {
+      $("#name" + i).on('click',function () {
 
         $("#dataTableBody_deatil").empty();
         $("#dataTableBody_deatil").append("<div class='detail_tbl detail_td'><div id='img_det" + i + "'></div></div>");
@@ -232,7 +284,7 @@ $(function () {
             center: uluru,
             zoom: 16,
           });
-  
+          
           const marker = new google.maps.Marker({
             position: uluru,
             map: map,
@@ -290,6 +342,11 @@ $(function () {
 
 
     });
+  });
+
+
+  $("window").scroll(function(){
+    $("#select_wrap").css('color',red);
   });
 
 

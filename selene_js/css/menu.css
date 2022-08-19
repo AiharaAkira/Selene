@@ -1,0 +1,84 @@
+#header {
+  width: 100%;
+  height: 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+#mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  zoom: 1;
+  opacity: 0.5;
+  z-index: 9998;
+  display: none;
+}
+
+.btn_menu_open {
+  background: url(../img/pngwing.png);
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.btn_menu_open img {
+  width: 300px;
+  height: 300px;
+}
+
+.slide_menu {
+  width: 80%;
+  height: 100%;
+  max-width: 250px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow-y: scroll;
+  z-index: 9999;
+  display: none;
+}
+
+.slide_menu .menu_close {
+  width: 100%;
+  height: 52px;
+  position: relative;
+}
+
+.slide_menu .menu_close img {
+  width: 30px;
+  height: 30px;
+}
+
+.slide_menu .btn_menu_close {
+  background: none;
+  border: 0;
+  font-size: 15px;
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.slide_menu .menu_list li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  list-style: none;
+}
+
+.slide_menu .menu_list li a {
+  font-size: 15px;
+  color: #333;
+}

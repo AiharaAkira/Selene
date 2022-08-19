@@ -27,7 +27,7 @@ text-align: center;
   margin-right: 10px;
   font-size: 25px;
   cursor: pointer;
-  float: left;
+ 
 }
 
 
@@ -295,6 +295,19 @@ a.button {
     width: 70%;
     height: 70%;
   }
+
+
+
+  #map{
+    text-align: center;
+  }
+
+  .selene_guide{
+    font-size: 40px;
+    font-weight: bold;
+    color: #939393;
+  }
+
 
  
   

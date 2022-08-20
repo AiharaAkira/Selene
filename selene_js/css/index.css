@@ -62,15 +62,17 @@ text-align: center;
 }
 
 #detail_wrap{
-    margin-top: 7%;
+    
     text-align : center;
-    margin-bottom: 10%;
-    height: 70%;
+    padding-top: 4%;
+    
+    height: 100%;
 }
 
 .open_det{
   width: 50%;
   float: left;
+  
 }
 
 #dataTableBody{
@@ -97,6 +99,7 @@ text-align: center;
 #select_wrap{
   position: fixed;
   width: 100%;
+
   text-align: center;
 }
 
@@ -196,6 +199,7 @@ a.button {
   .logo{
     
     text-align: center;
+    cursor: pointer;
    
   }
 
@@ -226,7 +230,7 @@ a.button {
     height: 70px;
     
     font-weight: bold;
-
+    cursor: pointer;
     
     
   }
@@ -309,7 +313,8 @@ a.button {
   }
 
 
- 
+
+
   
 
  

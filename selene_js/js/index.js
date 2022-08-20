@@ -241,30 +241,28 @@ $(function () {
 
 
 
-  $("").click(function(){
-    
-  });
+ 
     
 
 
 
 
-  $("#dataTableBody").on('mouseover',function () {
+  $("#dataTableBody").unbind().on('mouseover',function () {
 
+    
     $.each(source, function (i, shop) {
-
-      $("#name" + i).on('click',function () {
+    $("#name" + i).unbind().on('click',function () {
 
         $("#dataTableBody_deatil").empty();
         $("#dataTableBody_deatil").append("<div class='detail_tbl detail_td'><div id='img_det" + i + "'></div></div>");
         $('#img_det' + i).append("<img src='" + shop.photo.pc.l + "'>");
-        $("#dataTableBody_deatil").append("<div class='detail_tbl detail_td'><div  id='name_det" + i + "'></div>");
+        $("#dataTableBody_deatil").append("<div class='detail_tbl detail_td_name'><div  id='name_det" + i + "'></div>");
         $('#name_det' + i).text(shop.name);
         $("#dataTableBody_deatil").append("<div class='detail_td' id='address_det" + i + "'></div>");
         $('#address_det' + i).text(shop.address);
         $("#dataTableBody_deatil").append("<div class='open_det detail_td' id='open_det" + i + "'></div>");
         $('#open_det' + i).text(shop.open);
-
+        $('.selene_guide').empty();
         $('#map-container').css("visibility", "visible");
 
 
@@ -301,7 +299,7 @@ $(function () {
 
       });
 
-      $("#logo" + i).click(function () {
+      $("#logo" + i).unbind().click(function () {
         $("#dataTableBody_deatil").empty();
         $("#dataTableBody_deatil").append("<div class='detail_tbl'><div id='img_det" + i + "'></div></div>");
         $('#img_det' + i).append("<img src='" + shop.photo.pc.l + "'>");
@@ -311,7 +309,7 @@ $(function () {
         $('#address_det' + i).text(shop.address);
         $("#dataTableBody_deatil").append("<div class='open_det detail_td' id='open_det" + i + "'></div>");
         $('#open_det' + i).text(shop.open);
-
+        $('.selene_guide').empty();
         $('#map-container').css("visibility", "visible");
 
         let map;

@@ -38,6 +38,8 @@
   
   <div id="first_wrap">
 
+    
+
     <div id="header">
       <div id="mask"></div>
       
@@ -46,6 +48,7 @@
         <div class="menu_close"><button type="button" class="btn_menu_close"><img src="https://cdn-icons-png.flaticon.com/512/70/70091.png"></button></div>
         <ul id="menu_bar">
          
+          <li id="menu_bar_log" >Selene</li>
           <li id="menu_bar_selector1" class="menu_bar_selector">Main</li>
           <li id="menu_bar_selector2" class="menu_bar_selector">dataPage</li>
           <li id="menu_bar_selector3" class="menu_bar_selector">detail</li>
@@ -56,9 +59,11 @@
     </div>
   
   
+    <div id="select_call">
+      <button id="select_call_btn"><img src="../img/select.png"></button>
+    </div>
     
-   
-    
+
     <div id="title_wrap">
       <svg viewBox="0 0 400 150">
         <symbol id="s-text">
@@ -80,14 +85,18 @@
 
       </svg>
     </div>
+    
+      <div id="select_wrap">
+   
+    
+  
 
-
-    <div id="select_wrap">
+      
 
       <select id="dataPerPage">
-        <option value="5">5개씩보기</option>
-        <option value="10">10개씩보기</option>
-        <option value="15">15개씩보기</option>
+        <option value="3">3개씩보기</option>
+        <option value="6">6개씩보기</option>
+        <option value="9">9개씩보기</option>
       </select>
 
       <a id="btn_search" onclick="fnMove('#tbl_wrap')" title="Button border blue/green"

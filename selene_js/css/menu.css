@@ -20,6 +20,8 @@
   display: none;
 }
 
+
+
 .btn_menu_open {
   background: url(../img/pngwing.png);
   background-size: cover;
@@ -76,9 +78,11 @@
   padding: 15px;
   border-bottom: 1px solid #ccc;
   list-style: none;
+  
 }
 
 .slide_menu .menu_list li a {
   font-size: 15px;
   color: #333;
 }
+

@@ -4,7 +4,19 @@ let pageCount = 2; //페이징에 나타낼 페이지 수
 let globalCurrentPage = 1; //현재 페이지
 let source = null;
 
-
+var last_scrollTop = 0;
+ 
+    $(window).scroll(function () {
+        var tmp = $(this).scrollTop();
+        if (tmp > last_scrollTop) {
+            $("#select_wrap").css('visibility','hidden');
+            $("#select_call").css('visibility','visible');
+        } else {
+          $("#select_wrap").css('visibility','hidden');
+          $("#select_call").css('visibility','visible');
+        }
+        last_scrollTop = tmp;
+    });
 
 
 function menuSelect(selector) {
@@ -197,6 +209,13 @@ $(function () {
 
   });
 
+  $('#select_call_btn').click(function(){
+    
+    $("#select_call").css('visibility','hidden');
+    $("#select_wrap").css('visibility','visible');
+
+  });
+
 
   $('#btn_search').click(function () {
 
@@ -343,9 +362,7 @@ $(function () {
   });
 
 
-  $("window").scroll(function(){
-    $("#select_wrap").css('color',red);
-  });
+
 
 
 

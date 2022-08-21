@@ -22,13 +22,27 @@ text-align: center;
   
 }
 
+
+
 #menu_bar li{
   color: darkgray;
   margin-right: 10px;
   font-size: 25px;
   cursor: pointer;
+  margin-bottom: 10%;
  
 }
+
+#menu_bar li:first-child{
+  font-family: Netflix Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: rgb(82, 114, 90);
+  margin-bottom: 100%;
+  cursor: none;
+  font-size: 40px;
+}
+
+
 
 
 
@@ -47,8 +61,27 @@ text-align: center;
  
 }
 
+#select_call{
+  position: fixed;
+  width: 100%;
+  padding-top: 3%;
+}
 
+#select_call_btn{
+  text-align: right;
+  background-color:transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  
+  margin-bottom: 10px;
+}
 
+#select_call_btn img{
+  width: 60px;
+  margin-right: 10px;
+  height: 10%;
+}
 
 
 
@@ -57,6 +90,7 @@ text-align: center;
     padding-top: 5%;
     text-align : left;
     margin-bottom: 5%;
+    
 
     
 }
@@ -78,7 +112,7 @@ text-align: center;
 #dataTableBody{
     width: 100%;
     display: inline-block;
-    height: auto;
+    height: max-content;
     margin: 0 auto;
     
 }
@@ -99,8 +133,12 @@ text-align: center;
 #select_wrap{
   position: fixed;
   width: 100%;
-
+  visibility: visible;
   text-align: center;
+}
+
+#select_call{
+  visibility: hidden;
 }
 
 #dataPerPage{
@@ -122,8 +160,8 @@ text-align: center;
 
 .data_tbl{
   float: left;
-  width: 20%;
- height: 400px;
+  width: 33%;
+ height: max-content;
   
 }
 
@@ -200,6 +238,7 @@ a.button {
     
     text-align: center;
     cursor: pointer;
+    
    
   }
 

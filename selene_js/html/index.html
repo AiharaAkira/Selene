@@ -9,9 +9,12 @@
   <title>Document</title>
   <link rel="stylesheet" href="../css/menu.css">
   <link rel="stylesheet" href="../css/paging.css">
+
   <link rel="stylesheet" href="../css/map.css">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/title.css">
+  <link rel="stylesheet" href="../css/start.css">
+  <link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="../css/mobile.css">
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -35,7 +38,7 @@
 </head>
 
 <body>
-  
+ 
   <div id="first_wrap">
 
     
@@ -60,7 +63,13 @@
   
   
     <div id="select_call">
-      <button id="select_call_btn"><img src="../img/select.png"></button>
+      <button id="select_call_btn"><img id="select_call_img" src="../img/select.png"></button>
+    </div>
+    
+    <div id="dark_wrap">
+      <button id="dark_btn">
+        <img id="dark_img" src="../img/sun.png">
+      </button>
     </div>
     
 
@@ -122,12 +131,12 @@
 
 
   <div id="detail_wrap">
-    <div class="selene_guide">please_click_logo</div>
+    <div class="selene_guide">please_click_🔍</div>
     <div id="dataTableBody_deatil"></div>
   </div>
 
   <div id="map">
-    <div class="selene_guide">please_click_logo</div>
+    <div class="selene_guide">please_click_image</div>
 
   </div>
 

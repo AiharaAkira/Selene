@@ -1,8 +1,23 @@
-let totalData; //총 데이터 수
-let dataPerPage; //한 페이지에 나타낼 글 수
-let pageCount = 2; //페이징에 나타낼 페이지 수
-let globalCurrentPage = 1; //현재 페이지
+let totalData; //全データの数
+let dataPerPage; //一ページに表す掲示物
+let pageCount = 2; //一ページに表すページの数
+let globalCurrentPage = 1; //現在のページ
 let source = null;
+let mode = 1;
+
+function modeChange(){
+  if(mode == 1){
+    $("#dark_img").attr("src", "../img/moon.png");
+    $("body").css("background-color","#1e1f21");
+    $(".tbl_name").css("color", "rgb(204, 210, 210)");
+    mode = 2;
+  }else if(mode ==2){
+    $("#dark_img").attr("src", "../img/sun.png");
+    $("body").css("background-color","rgb(204, 210, 210)");
+    $(".tbl_name").css("color", "black");
+    mode = 1;
+  }
+}
 
 var last_scrollTop = 0;
  
@@ -48,20 +63,20 @@ function setVisible(a){
 function paging(totalData, dataPerPage, pageCount, currentPage) {
   console.log("currentPage : " + currentPage);
 
-  totalPage = Math.ceil(totalData / dataPerPage); //총 페이지 수
+  totalPage = Math.ceil(totalData / dataPerPage); //全データの数
 
   if (totalPage < pageCount) {
     pageCount = totalPage;
   }
 
-  let pageGroup = Math.ceil(currentPage / pageCount); // 페이지 그룹
-  let last = pageGroup * pageCount; //화면에 보여질 마지막 페이지 번호
+  let pageGroup = Math.ceil(currentPage / pageCount); // ページグループ
+  let last = pageGroup * pageCount; //画面に見せる最後のページの番号
 
   if (last > totalPage) {
     last = totalPage;
   }
 
-  let first = last - (pageCount - 1); //화면에 보여질 첫번째 페이지 번호
+  let first = last - (pageCount - 1); //画面に見せる最初のページの番号
   let next = last + 1;
   let prev = first - 1;
 
@@ -71,7 +86,7 @@ function paging(totalData, dataPerPage, pageCount, currentPage) {
     pageHtml += "<li onclick='fnMove('#tbl_wrap')'><a  id='prev'> 이전 </a></li>";
   }
 
-  //페이징 번호 표시 
+  //ページの番号
   for (var i = first; i <= last; i++) {
     if (currentPage == i) {
       pageHtml +=
@@ -209,7 +224,7 @@ $(function () {
 
   });
 
-  $('#select_call_btn').click(function(){
+  $('#select_call_img').click(function(){
     
     $("#select_call").css('visibility','hidden');
     $("#select_wrap").css('visibility','visible');
@@ -446,7 +461,9 @@ $(function () {
 
   });
 
-
+  $("#dark_btn").click(function(){
+    modeChange();
+  });
 
   $("#detail_back_img").click(function () {
     selector = 2;

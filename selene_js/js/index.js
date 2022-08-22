@@ -5,14 +5,16 @@ let globalCurrentPage = 1; //現在のページ
 let source = null;
 let mode = 1;
 
+
+
 function modeChange(){
   if(mode == 1){
-    $("#dark_img").attr("src", "../img/moon.png");
+    $("#dark_img").attr("src", "img/moon.png");
     $("body").css("background-color","#1e1f21");
     $(".tbl_name").css("color", "rgb(204, 210, 210)");
     mode = 2;
   }else if(mode ==2){
-    $("#dark_img").attr("src", "../img/sun.png");
+    $("#dark_img").attr("src", "img/sun.png");
     $("body").css("background-color","rgb(204, 210, 210)");
     $(".tbl_name").css("color", "black");
     mode = 1;
@@ -106,7 +108,7 @@ function paging(totalData, dataPerPage, pageCount, currentPage) {
   $("#displayCount").text(displayCount);
 
 
-  //페이징 번호 클릭 이벤트 
+  //ページ番号クリックイベント
   $("#pagingul li a").click(function () {
     let $id = $(this).attr("id");
     selectedPage = $(this).text();
@@ -114,22 +116,22 @@ function paging(totalData, dataPerPage, pageCount, currentPage) {
     if ($id == "next") selectedPage = next;
     if ($id == "prev") selectedPage = prev;
 
-    //전역변수에 선택한 페이지 번호를 담는다...
+    //選んだページ番号
     globalCurrentPage = selectedPage;
-    //페이징 표시 재호출
+    //ページ表示 また呼ぶ
     paging(totalData, dataPerPage, pageCount, selectedPage);
-    //글 목록 표시 재호출
+    //掲示物 表示 また呼ぶ
     displayData(selectedPage, dataPerPage);
   });
 }
 
 
-//현재 페이지(currentPage)와 페이지당 글 개수(dataPerPage) 반영
+//現在ページ(currentPage)とページごとを掲示物(dataPerPage)反映
 function displayData(currentPage, dataPerPage) {
 
   let chartHtml = "";
 
-  //Number로 변환하지 않으면 아래에서 +를 할 경우 스트링 결합이 되어버림.. 
+  //Numberに変換しないと 下で +する場合 文字(String)になる.. 
   currentPage = Number(currentPage);
   dataPerPage = Number(dataPerPage);
 
@@ -154,22 +156,30 @@ function displayData(currentPage, dataPerPage) {
       console.log('성공');
 
     });
-  } //dataList는 임의의 데이터임.. 각 소스에 맞게 변수를 넣어주면 됨...
+  } 
   $("#dataTableBody").html(chartHtml);
 }
 
 
-function getLocation(lat, lng) {
 
+function getLocation(lat, lng) {
+  
+ 
   navigator.geolocation.getCurrentPosition(function (pos) {
-    var latitude = pos.coords.latitude;
-    var longitude = pos.coords.longitude;
+  var latitude = pos.coords.latitude;
+   var longitude = pos.coords.longitude;
     lat = latitude;
     lng = longitude;
-
+    console.log(lat);
+    console.log(lng);
+    return lat, lng;
+   
   });
 
 }
+
+
+
 
 
 
@@ -177,6 +187,13 @@ $(function () {
 
   
 
+  let lat;
+  let lng;
+  getLocation(lat, lng);
+
+
+  console.log(lat);
+  console.log(lng);
   let selector = 1;
   menuSelect(1);
 
@@ -187,10 +204,10 @@ $(function () {
 
 
 
-    //	위도: 34.6936, 경도: 135.502
-    //lat=34.67&lng=135.52
+    
+    //example)  lat=34.67&lng=135.52
     $.ajax({
-      url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=ed29f000ddf09f94&lat=34.67&lng=135.52&range=5&order=4&format=jsonp&callback=callback',
+      url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=ed29f000ddf09f94&lat='+lat+'&lng='+lng+'&range=5&order=4&format=jsonp&callback=callback',
       type: 'GET',
       dataType: 'jsonp',
       jsonpCallback: 'callback'
@@ -202,10 +219,10 @@ $(function () {
       totalData = source.length;
       console.log(totalData);
 
-      //글 목록 표시 호출 (테이블 생성)
+      //目録を呼ぶ (テーブル生成)
       displayData(1, dataPerPage);
 
-      //페이징 표시 호출
+      //ページを呼ぶ
       paging(totalData, dataPerPage, pageCount, 1);
 
 
@@ -215,7 +232,7 @@ $(function () {
 
 
       console.log(source);
-
+     
 
 
     }).fail(function (data) {
@@ -236,10 +253,10 @@ $(function () {
 
 
 
-    //	위도: 34.6936, 경도: 135.502
+   
     //lat=34.67&lng=135.52
     $.ajax({
-      url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=ed29f000ddf09f94&lat=34.67&lng=135.52&range=5&order=4&format=jsonp&callback=callback',
+      url: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=ed29f000ddf09f94&lat=34.6936&lng=135.52&range=5&order=4&format=jsonp&callback=callback',
       type: 'GET',
       dataType: 'jsonp',
       jsonpCallback: 'callback'
@@ -251,10 +268,10 @@ $(function () {
       totalData = source.length;
       console.log(totalData);
 
-      //글 목록 표시 호출 (테이블 생성)
+      //目録を呼ぶ (テーブル生成)
       displayData(1, dataPerPage);
 
-      //페이징 표시 호출
+      //ページを呼ぶ
       paging(totalData, dataPerPage, pageCount, 1);
 
 
@@ -383,7 +400,7 @@ $(function () {
 
   $("#dataPerPage").change(function () {
     dataPerPage = $("#dataPerPage").val();
-    //전역 변수에 담긴 globalCurrent 값을 이용하여 페이지 이동없이 글 표시개수 변경 
+    // globalCurrent をりようして ページ 移動なしで 掲示物の数変更 
     paging(totalData, dataPerPage, pageCount, globalCurrentPage);
     displayData(globalCurrentPage, dataPerPage);
   });
